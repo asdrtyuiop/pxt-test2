@@ -63,17 +63,6 @@ namespace artecrobo {
 	//% blockId=artec_set_speed_dc_motor
 	//% block="DC motor %_connector| speed: %_speed"
 	//% _speed.min=0 _speed.max=1023
-	export function setSpeedDCMotor(_connector: connectorDCMotor, _speed: number): void {
-		if (_speed < 0)		{ _speed = 0; }
-		if (_speed > 1023)	{ _speed = 1023; }
-		if (_connector == connectorDCMotor.M1) {
-			speedM1 = 1023 - _speed;
-		} else {
-			speedM2 = 1023 - _speed;
-		}
-		if (state == DCmotion.Forward || state == DCmotion.Backward) {
-			moveDCMotor(_connector, state);
-		}
-	}
+	
 
 }
